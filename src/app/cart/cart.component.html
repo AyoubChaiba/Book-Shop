@@ -1,0 +1,20 @@
+<div class="container mx-auto">
+  <div class="mt-8 p-4 bg-gray-200 rounded">
+    <h2 class="text-xl font-bold mb-4">Shopping Cart Summary</h2>
+        <div *ngFor="let cart of carts; let i=index" class="flex justify-between items-center mb-2 ">
+          <div class="flex items-center">
+            <img [src]="cart.image" [alt]="cart.title" class="w-12 h-12 object-cover rounded mr-4">
+            <div>
+              <p class="font-semibold">{{cart.title}}</p>
+              <p>{{cart.amount}}</p>
+            </div>
+          </div>
+          <button class="text-red-500" (click)="removeCart(cart)">Remove</button>
+        </div>
+    <div class="flex justify-between items-center mt-4">
+      <p class="font-bold">Total:</p>
+      <p class="font-bold">{{totalCart()}}</p>
+    </div>
+  </div>
+
+</div>

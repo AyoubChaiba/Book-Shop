@@ -1,0 +1,13 @@
+<div class="container mx-auto">
+  <h2 class="text-2xl font-bold my-4">Programming Books List!</h2>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <ng-container *ngFor="let singleBook of books; let i=index">
+      <app-book [book]="singleBook" class="p-5 text-center"></app-book>
+    </ng-container>
+  </ul>
+</div>
+
+
+
+
+

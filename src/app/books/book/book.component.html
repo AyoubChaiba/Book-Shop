@@ -1,0 +1,14 @@
+<li class="bg-white border rounded-xl overflow-hidden shadow-md h-96 flex flex-col">
+  <div class="h-2/4">
+    <img [src]="book.image" [alt]="book.title" class="w-full h-full object-cover" />
+  </div>
+  <div class="h-2/4 p-4">
+    <h3 class="text-lg font-semibold mb-2 truncate">{{ book.title | titlecase }}</h3>
+    <p class="text-sm mb-2">by {{ book.author | titlecase }}</p>
+    <p class="text-lg">{{ book.amount | currency:'' }}</p>
+    <div class="mt-4">
+      <button class="bg-yellow-400 text-white rounded p-2" *ngIf="!isInCart" (click)="addBook()">Add to Cart</button>
+      <button class="bg-yellow-400 text-white rounded p-2" *ngIf="isInCart" (click)="removeBook()">Remove from Cart</button>
+    </div>
+  </div>
+</li>
