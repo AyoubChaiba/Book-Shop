@@ -5,12 +5,12 @@
       </h1>
       <div>
           <a class=" bg-gray-100 text-black rounded p-2" routerLink="/cart"> My Cart <span *ngIf="getData().length>0">{{getData().length}}</span></a>
-          <ng-container *ngIf="">
+          <ng-container *ngIf="!isAuthenticated()">
               <a class="mx-4" routerLink="/login"> Login</a>
               <a class="mx-4" routerLink="/register"> Register</a>
           </ng-container>
-          <ng-container *ngIf="">
-              <button class="mx-4">Logout</button>
+          <ng-container *ngIf="isAuthenticated()">
+              <button (click)="logout()" class="mx-4">Logout</button>
           </ng-container>
       </div>
     </div>
